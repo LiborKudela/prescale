@@ -2,7 +2,7 @@
 
 # input
 curve = "A"
-interactive_plot="Surface"
+interactive_plot = "Contour"
 image_path = "Prescale_MS_Loz.jpg"
 Curve_path = "LLW_Prescale_A_B_C_D_2min.csv"
 f_scale = 5
@@ -72,9 +72,9 @@ plt.contourf(numpy.flip(Pressure, axis=0))
 plt.colorbar()
 plt.savefig("output_" + image_path + ".jpg", figsize=(12, 12), dpi=600)
 
-if interactive_plot=="Contour":
+if interactive_plot == "Contour":
     fig = go.Figure(data=[go.Contour(z=Pressure)])
     fig.show()
-elif interactive_plot=="Surface":
+elif interactive_plot == "Surface":
     fig = go.Figure(data=[go.Surface(z=Pressure)])
     fig.show()
